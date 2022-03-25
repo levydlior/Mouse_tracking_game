@@ -15,14 +15,29 @@ const movingTarget = () => {
     target.style.bottom= targetLocationGenerator(-34.8, - 0) +"rem"
 }
 
-
-
+const countDown = () => {
+    
+    setInterval(() =>{
+        if (timeDisplay.innerText > 0){
+            timeDisplay.innerText--
+        }
+    }, 1000)
+    if (timeDisplay.innerText === 0){
+        isRunning === false
+    }
+    if (timeDisplay.innerText === 0 && isRunning === false){
+        timeDisplay.innerText = 10
+    }
+}
 
 target.addEventListener("click", () =>{
-    isRunning = true;
-    if (isRunning === true){
+    isRunning = true
+    if (isRunning){
         movingTarget()
+        countDown()
+        console.log("isRunning?", isRunning)
     }else{
         null
     }
 })
+
