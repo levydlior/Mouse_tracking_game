@@ -1,8 +1,23 @@
 const timeDisplay= document.querySelector("#timer")
 const scoreDisplay= document.querySelector("#score")
 const target = document.querySelector("#target")
+const startGame = document.querySelector("#start")
+
 
 let isRunning = false;
+
+const runGame = () => {
+    if (!isRunning){
+        isRunning = true
+        startGame.innerText = "Restart"
+        countDown()
+}
+}
+
+
+startGame.addEventListener('click', ()=>{
+    runGame()  
+})
 
 
 const targetLocationGenerator = (min, max)=>{ 
@@ -22,22 +37,20 @@ const countDown = () => {
             timeDisplay.innerText--
         }
     }, 1000)
-    if (timeDisplay.innerText === 0){
-        isRunning === false
-    }
-    if (timeDisplay.innerText === 0 && isRunning === false){
+}
+
+const restart = () => {
+    if (timeDisplay.innerText == 0){
         timeDisplay.innerText = 10
+        clearInterval(countDown)
     }
 }
 
+
 target.addEventListener("click", () =>{
-    isRunning = true
     if (isRunning){
         movingTarget()
-        countDown()
-        console.log("isRunning?", isRunning)
-    }else{
-        null
+        scoreDisplay.innerText ++
     }
 })
 

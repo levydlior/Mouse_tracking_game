@@ -29,12 +29,13 @@ body {
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 0.2rem;
+    padding-inline: 10rem;
 }
 
 .display {
     border-style: solid;
     padding: 0.5rem;
-    margin-left: -23rem;
+    margin-inline: 0.2rem;
 }
 
 main {
@@ -57,4 +58,15 @@ main {
 
 #game:hover{
     cursor: crosshair;
+}
+
+button {
+    padding: 0.5rem;
+    font-style: italic;
+}
+
+.displayTabs {
+    display: flex;
+    justify-content: space-between;
+    width: 6rem;
 }
