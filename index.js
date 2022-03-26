@@ -6,11 +6,24 @@ const startGame = document.querySelector("#start")
 
 let isRunning = false;
 
+const startButtonActivation = ()=> {
+    if (!isRunning && startGame.innerText === "Start"){
+        // startGame.disabled = true
+        startGame.innerText = "Restart"
+        isRunning = true
+    }else if (!isRunning && startGame.innerText === "Restart" && timeDisplay.innerText === "0"){
+        console.log("Restarting")
+        timeDisplay.innerText = 10
+        isRunning = true
+        scoreDisplay.innerText = 0
+    }
+}
+
 const runGame = () => {
     if (!isRunning){
-        isRunning = true
-        startGame.innerText = "Restart"
+        startButtonActivation()
         countDown()
+        
     }
 }
 
@@ -59,7 +72,7 @@ const countDown = () => {
 
 target.addEventListener("click", () =>{
     if (isRunning){
-        // movingTarget()
+        movingTarget()
         scoreDisplay.innerText ++
         increaseDifficulty()
         }
