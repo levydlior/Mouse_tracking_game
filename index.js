@@ -16,6 +16,8 @@ const startButtonActivation = ()=> {
         timeDisplay.innerText = 10
         isRunning = true
         scoreDisplay.innerText = 0
+        target.style.right = "-30rem";
+        target.style.bottom = "-19rem";
     }
 }
 
@@ -45,14 +47,19 @@ const movingTarget = () => {
 const increaseDifficulty = ()=> {
     if (scoreDisplay.innerText < 5){
         timeDisplay.innerText = 10
+        target.style.transition =  "2s"
     }else if (scoreDisplay.innerText < 10){
         timeDisplay.innerText = 8
+        target.style.transition =  "1.5s"
     }else if (scoreDisplay.innerText < 15){
         timeDisplay.innerText = 5
+        target.style.transition =  "1.3s"
     }else if (scoreDisplay.innerText < 20){
         timeDisplay.innerText = 3
+        target.style.transition =  "1s"
     }else if (scoreDisplay.innerText < 25){
         timeDisplay.innerText = 1
+        target.style.transition =  "0s"
     }
  }
 
