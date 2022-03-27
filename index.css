@@ -36,6 +36,8 @@ body {
     border-style: solid;
     padding: 0.5rem;
     margin-inline: 0.2rem;
+    width: 2rem;
+    height: 2.5rem;
 }
 
 main {
@@ -69,4 +71,5 @@ button {
     display: flex;
     justify-content: space-between;
     width: 6rem;
+    align-items: center;
 }
